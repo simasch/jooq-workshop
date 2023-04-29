@@ -11,18 +11,20 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-@Testcontainers
 @SpringBootTest
 abstract class JooqTestcontainersTest {
 
     @Autowired
     DSLContext dsl;
 
-    @Container
     static final PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:latest")
             .withDatabaseName("postgres")
             .withUsername("postgres")
             .withPassword("postgres");
+
+    static {
+        postgreSQLContainer.start();
+    }
 
     @DynamicPropertySource
     static void datasourceConfig(DynamicPropertyRegistry registry) {
