@@ -1,1 +1,3 @@
-# jooq-workshop
+# jOOQ Workshop
+
+https://martinelli.ch/jooq-workshop
