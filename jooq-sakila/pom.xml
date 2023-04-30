@@ -92,24 +92,6 @@
                             </source>
                         </configuration>
                     </execution>
-                    <execution>
-                        <!-- Stop testcontainers after tests have completed -->
-                        <id>testcontainers-stop</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>execute</goal>
-                        </goals>
-                        <configuration>
-                            <source>
-                                containerId = "${testcontainers.containerId}"
-                                imageName = "${testcontainers.imageName}"
-                                println("Stopping testcontainer $containerId - $imageName")
-                                org.testcontainers.utility.ResourceReaper
-                                        .instance()
-                                        .stopAndRemoveContainer(containerId, imageName);
-                            </source>
-                        </configuration>
-                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
