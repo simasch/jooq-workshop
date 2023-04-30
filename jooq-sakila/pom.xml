@@ -145,6 +145,12 @@
                                     <inputSchema>public</inputSchema>
                                     <excludes>flyway_.*</excludes>
                                 </database>
+                                <generate>
+                                    <pojos>true</pojos>
+                                    <pojosToString>false</pojosToString>
+                                    <pojosEqualsAndHashCode>false</pojosEqualsAndHashCode>
+                                    <daos>true</daos>
+                                </generate>
                                 <target>
                                     <packageName>ch.martinelli.edu.jooq.sakila.db</packageName>
                                 </target>
