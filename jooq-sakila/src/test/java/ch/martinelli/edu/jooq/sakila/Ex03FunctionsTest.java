@@ -5,9 +5,9 @@ import org.jooq.WindowDefinition;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.Test;
 
-import static org.jooq.generated.tables.Actor.ACTOR;
-import static org.jooq.generated.tables.Film.FILM;
-import static org.jooq.generated.tables.FilmActor.FILM_ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Film.FILM;
+import static ch.martinelli.edu.jooq.sakila.db.tables.FilmActor.FILM_ACTOR;
 import static org.jooq.impl.DSL.*;
 
 class Ex03FunctionsTest extends JooqTestcontainersTest {

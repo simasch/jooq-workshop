@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.jooq.generated.tables.Actor.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 
 class Ex11QueryObjectModelTest extends JooqTestcontainersTest {
 

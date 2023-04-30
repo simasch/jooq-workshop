@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.jooq.generated.tables.Actor.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 import static org.jooq.impl.DSL.noCondition;
 import static org.jooq.impl.DSL.val;
 

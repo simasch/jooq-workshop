@@ -1,15 +1,15 @@
 package ch.martinelli.edu.jooq.sakila;
 
-import org.jooq.generated.tables.FilmInStock;
+import ch.martinelli.edu.jooq.sakila.db.tables.FilmInStock;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import static org.jooq.generated.Routines.inventoryInStock;
-import static org.jooq.generated.Tables.FILM_IN_STOCK;
-import static org.jooq.generated.tables.Actor.ACTOR;
-import static org.jooq.generated.tables.Film.FILM;
-import static org.jooq.generated.tables.Inventory.INVENTORY;
-import static org.jooq.generated.tables.Store.STORE;
+import static ch.martinelli.edu.jooq.sakila.db.Routines.inventoryInStock;
+import static ch.martinelli.edu.jooq.sakila.db.Tables.FILM_IN_STOCK;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Film.FILM;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Inventory.INVENTORY;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Store.STORE;
 import static org.jooq.impl.DSL.lateral;
 
 class Ex12StoredProceduresTest extends JooqTestcontainersTest {

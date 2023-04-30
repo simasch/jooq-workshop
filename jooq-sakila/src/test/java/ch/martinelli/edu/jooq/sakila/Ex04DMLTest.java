@@ -1,10 +1,10 @@
 package ch.martinelli.edu.jooq.sakila;
 
-import org.jooq.generated.tables.records.ActorRecord;
+import ch.martinelli.edu.jooq.sakila.db.tables.records.ActorRecord;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import static org.jooq.generated.tables.Actor.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 
 class Ex04DMLTest extends JooqTestcontainersTest {
 

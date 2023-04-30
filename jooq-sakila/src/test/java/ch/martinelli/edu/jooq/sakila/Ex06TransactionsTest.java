@@ -4,7 +4,7 @@ import org.jooq.DSLContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import static org.jooq.generated.Tables.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.Tables.ACTOR;
 
 
 class Ex06TransactionsTest extends JooqTestcontainersTest {

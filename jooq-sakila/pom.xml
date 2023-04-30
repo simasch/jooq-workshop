@@ -169,6 +169,9 @@
                                     <pojosEqualsAndHashCode>false</pojosEqualsAndHashCode>
                                     <daos>true</daos>
                                 </generate>
+                                <target>
+                                    <packageName>ch.martinelli.edu.jooq.sakila.db</packageName>
+                                </target>
                             </generator>
                         </configuration>
                     </execution>

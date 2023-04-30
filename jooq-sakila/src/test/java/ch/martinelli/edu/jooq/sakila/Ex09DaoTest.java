@@ -1,14 +1,14 @@
 package ch.martinelli.edu.jooq.sakila;
 
-import org.jooq.generated.tables.daos.ActorDao;
-import org.jooq.generated.tables.pojos.Actor;
+import ch.martinelli.edu.jooq.sakila.db.tables.daos.ActorDao;
+import ch.martinelli.edu.jooq.sakila.db.tables.pojos.Actor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import static org.jooq.generated.tables.Actor.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 
 class Ex09DaoTest extends JooqTestcontainersTest {
 

@@ -1,15 +1,15 @@
 package ch.martinelli.edu.jooq.sakila;
 
 import org.jooq.*;
-import org.jooq.generated.tables.records.ActorRecord;
+import ch.martinelli.edu.jooq.sakila.db.tables.records.ActorRecord;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.sql.Date;
 
-import static org.jooq.generated.Tables.ACTOR;
-import static org.jooq.generated.tables.Payment.PAYMENT;
+import static ch.martinelli.edu.jooq.sakila.db.Tables.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Payment.PAYMENT;
 import static org.jooq.impl.DSL.*;
 import static org.jooq.impl.SQLDataType.DATE;
 

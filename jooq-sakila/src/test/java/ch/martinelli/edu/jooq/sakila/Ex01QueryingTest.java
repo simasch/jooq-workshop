@@ -1,9 +1,9 @@
 package ch.martinelli.edu.jooq.sakila;
 
 import org.jooq.*;
-import org.jooq.generated.tables.Actor;
-import org.jooq.generated.tables.FilmActor;
-import org.jooq.generated.tables.records.ActorRecord;
+import ch.martinelli.edu.jooq.sakila.db.tables.Actor;
+import ch.martinelli.edu.jooq.sakila.db.tables.FilmActor;
+import ch.martinelli.edu.jooq.sakila.db.tables.records.ActorRecord;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -14,12 +14,12 @@ import java.util.stream.Stream;
 
 import static org.jooq.Records.intoMap;
 import static org.jooq.Records.mapping;
-import static org.jooq.generated.tables.Actor.ACTOR;
-import static org.jooq.generated.tables.Customer.CUSTOMER;
-import static org.jooq.generated.tables.Film.FILM;
-import static org.jooq.generated.tables.FilmActor.FILM_ACTOR;
-import static org.jooq.generated.tables.FilmCategory.FILM_CATEGORY;
-import static org.jooq.generated.tables.Payment.PAYMENT;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Customer.CUSTOMER;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Film.FILM;
+import static ch.martinelli.edu.jooq.sakila.db.tables.FilmActor.FILM_ACTOR;
+import static ch.martinelli.edu.jooq.sakila.db.tables.FilmCategory.FILM_CATEGORY;
+import static ch.martinelli.edu.jooq.sakila.db.tables.Payment.PAYMENT;
 import static org.jooq.impl.DSL.*;
 import static org.jooq.impl.SQLDataType.LOCALDATE;
 
