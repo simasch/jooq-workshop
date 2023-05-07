@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.jooq.DSLContext;
 import org.jooq.Meta;
 import org.jooq.Select;
@@ -7,7 +8,7 @@ import org.jooq.conf.ParseWithMetaLookups;
 import org.jooq.impl.ParserException;
 import org.junit.jupiter.api.Test;
 
-class Ex07ParserTest extends JooqTestcontainersTest {
+class Demo07ParserTest extends JooqTestcontainersTest {
 
     @Test
     void parser() {

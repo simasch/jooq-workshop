@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.jooq.DSLContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static ch.martinelli.edu.jooq.sakila.db.Tables.ACTOR;
 
 
-class Ex06TransactionsTest extends JooqTestcontainersTest {
+class Demo06TransactionsTest extends JooqTestcontainersTest {
 
     @Test
     void transactionCommit() {

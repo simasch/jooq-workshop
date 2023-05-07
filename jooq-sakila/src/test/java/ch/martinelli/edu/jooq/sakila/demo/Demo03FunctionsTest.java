@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.jooq.Field;
 import org.jooq.WindowDefinition;
 import org.jooq.impl.DSL;
@@ -10,7 +11,7 @@ import static ch.martinelli.edu.jooq.sakila.db.tables.Film.FILM;
 import static ch.martinelli.edu.jooq.sakila.db.tables.FilmActor.FILM_ACTOR;
 import static org.jooq.impl.DSL.*;
 
-class Ex03FunctionsTest extends JooqTestcontainersTest {
+class Demo03FunctionsTest extends JooqTestcontainersTest {
 
     @Test
     void testSimpleFunctions() {

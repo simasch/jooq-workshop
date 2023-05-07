@@ -12,10 +12,10 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @SpringBootTest
-abstract class JooqTestcontainersTest {
+public abstract class JooqTestcontainersTest {
 
     @Autowired
-    DSLContext dsl;
+    protected DSLContext dsl;
 
     static final PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:latest")
             .withDatabaseName("postgres")
@@ -33,17 +33,17 @@ abstract class JooqTestcontainersTest {
         registry.add("spring.datasource.username", postgreSQLContainer::getUsername);
     }
 
-    static void title(String title) {
+    public static void title(String title) {
         println("");
         println(title);
         println("-".repeat((String.valueOf(title)).length()));
     }
 
-    static <T> void println(T t) {
+    public static <T> void println(T t) {
         System.out.println(t);
     }
 
-    public void cleanup(Table<?> actor, Field<Long> actorId) {
+    protected void cleanup(Table<?> actor, Field<Long> actorId) {
         dsl.delete(actor)
                 .where(actorId.gt(200L))
                 .execute();

@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import ch.martinelli.edu.jooq.sakila.db.tables.daos.ActorDao;
 import ch.martinelli.edu.jooq.sakila.db.tables.pojos.Actor;
 import org.junit.jupiter.api.AfterEach;
@@ -10,7 +11,7 @@ import java.util.List;
 
 import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 
-class Ex09DaoTest extends JooqTestcontainersTest {
+class Demo09DaoTest extends JooqTestcontainersTest {
 
     @Test
     void pojos() {

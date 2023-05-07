@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.jooq.DSLContext;
 import org.jooq.ExecuteListener;
 import org.jooq.VisitListener;
@@ -8,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 import static org.jooq.impl.DSL.using;
 
-class Ex10SpiTest extends JooqTestcontainersTest {
+class Demo10SpiTest extends JooqTestcontainersTest {
 
     @Test
     void executeListener() {

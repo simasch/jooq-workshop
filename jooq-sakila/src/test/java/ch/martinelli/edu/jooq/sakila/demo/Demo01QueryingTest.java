@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.jooq.*;
 import ch.martinelli.edu.jooq.sakila.db.tables.Actor;
 import ch.martinelli.edu.jooq.sakila.db.tables.FilmActor;
@@ -23,7 +24,7 @@ import static ch.martinelli.edu.jooq.sakila.db.tables.Payment.PAYMENT;
 import static org.jooq.impl.DSL.*;
 import static org.jooq.impl.SQLDataType.LOCALDATE;
 
-class Ex01QueryingTest extends JooqTestcontainersTest {
+class Demo01QueryingTest extends JooqTestcontainersTest {
 
     @Test
     void fetchDual() {
@@ -229,7 +230,7 @@ class Ex01QueryingTest extends JooqTestcontainersTest {
                         .limit(5)
                         .fetch(mapping(Customer::new));
 
-        r.forEach(Ex01QueryingTest::println);
+        r.forEach(Demo01QueryingTest::println);
     }
 
     @Test
@@ -251,7 +252,7 @@ class Ex01QueryingTest extends JooqTestcontainersTest {
                         .limit(5)
                         .fetch(Record1::value1);
 
-        r.forEach(Ex01QueryingTest::println);
+        r.forEach(Demo01QueryingTest::println);
     }
 
     @Test

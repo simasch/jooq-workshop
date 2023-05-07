@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.stream.Stream;
 
 import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 
-class Ex11QueryObjectModelTest extends JooqTestcontainersTest {
+class Demo11QueryObjectModelTest extends JooqTestcontainersTest {
 
     // As of jOOQ 3.17, these features are *EXPERIMENTAL*!
 

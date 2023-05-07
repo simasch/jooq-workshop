@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import ch.martinelli.edu.jooq.sakila.db.tables.records.ActorRecord;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 
 import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 
-class Ex05BatchTest extends JooqTestcontainersTest {
+class Demo05BatchTest extends JooqTestcontainersTest {
 
     @Test
     void batchUpdatableRecords() {

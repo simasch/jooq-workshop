@@ -1,12 +1,13 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import ch.martinelli.edu.jooq.sakila.db.tables.records.ActorRecord;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 
-class Ex04DMLTest extends JooqTestcontainersTest {
+class Demo04DMLTest extends JooqTestcontainersTest {
 
     @Test
     void updatableRecords() {

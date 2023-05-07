@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.jooq.*;
 import ch.martinelli.edu.jooq.sakila.db.tables.records.ActorRecord;
 import org.junit.jupiter.api.AfterEach;
@@ -13,7 +14,7 @@ import static ch.martinelli.edu.jooq.sakila.db.tables.Payment.PAYMENT;
 import static org.jooq.impl.DSL.*;
 import static org.jooq.impl.SQLDataType.DATE;
 
-class Ex08ImportExportAndMoreTest extends JooqTestcontainersTest {
+class Demo08ImportExportAndMoreTest extends JooqTestcontainersTest {
 
     @Test
     void importExportCSV() throws IOException {

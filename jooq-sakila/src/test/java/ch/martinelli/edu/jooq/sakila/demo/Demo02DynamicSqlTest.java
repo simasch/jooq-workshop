@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import org.jetbrains.annotations.NotNull;
 import org.jooq.*;
 import org.jooq.impl.DSL;
@@ -11,7 +12,7 @@ import static ch.martinelli.edu.jooq.sakila.db.tables.Actor.ACTOR;
 import static org.jooq.impl.DSL.noCondition;
 import static org.jooq.impl.DSL.val;
 
-class Ex02DynamicSqlTest extends JooqTestcontainersTest {
+class Demo02DynamicSqlTest extends JooqTestcontainersTest {
 
     @Test
     void testDynamicSQL() {

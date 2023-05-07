@@ -1,5 +1,6 @@
-package ch.martinelli.edu.jooq.sakila;
+package ch.martinelli.edu.jooq.sakila.demo;
 
+import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
 import ch.martinelli.edu.jooq.sakila.db.tables.FilmInStock;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import static ch.martinelli.edu.jooq.sakila.db.tables.Inventory.INVENTORY;
 import static ch.martinelli.edu.jooq.sakila.db.tables.Store.STORE;
 import static org.jooq.impl.DSL.lateral;
 
-class Ex12StoredProceduresTest extends JooqTestcontainersTest {
+class Demo12StoredProceduresTest extends JooqTestcontainersTest {
 
     @Test
     void procedures() {
