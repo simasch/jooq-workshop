@@ -82,8 +82,8 @@
                         <configuration>
                             <source>
                                 db = new org.testcontainers.containers.PostgreSQLContainer("postgres:latest")
-                                        .withUsername("${db.username}")
                                         .withDatabaseName("postgres")
+                                        .withUsername("${db.username}")
                                         .withPassword("${db.password}")
                                 db.start()
                                 project.properties.setProperty('db.url', db.getJdbcUrl())
