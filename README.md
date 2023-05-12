@@ -2,7 +2,7 @@
 
 https://martinelli.ch/jooq-workshop
 
-# Prequisites
+# Prerequisites
 
 To run the project you'll need
 
