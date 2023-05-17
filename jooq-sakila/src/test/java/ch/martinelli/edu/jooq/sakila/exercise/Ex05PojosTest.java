@@ -19,6 +19,8 @@ public class Ex05PojosTest extends JooqTestcontainersTest {
                 .from(FILM)
                 .orderBy(FILM.LENGTH)
                 .fetchInto(FilmAndLength.class);
+
+        println(result);
     }
 
     @Test
