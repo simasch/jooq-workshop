@@ -14,7 +14,6 @@ public class Ex02ReturnTypesTest extends JooqTestcontainersTest {
         var result = dsl
                 .select(ACTOR.FIRST_NAME, ACTOR.LAST_NAME)
                 .from(ACTOR)
-                .limit(1)
                 .fetchSingle();
 
         println(result);
@@ -25,6 +24,8 @@ public class Ex02ReturnTypesTest extends JooqTestcontainersTest {
         var result = dsl
                 .selectFrom(FILM)
                 .orderBy(FILM.RELEASE_YEAR.desc())
+                .offset(1)
+                .limit(500)
                 .fetch();
 
         println(result);
