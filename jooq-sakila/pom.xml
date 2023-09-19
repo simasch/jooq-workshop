@@ -17,9 +17,6 @@
         <java.version>17</java.version>
         <jooq.version>3.18.3</jooq.version>
         <testcontainers.version>1.18.0</testcontainers.version>
-
-        <db.username>postgres</db.username>
-        <db.password>postgres</db.password>
     </properties>
 
     <dependencies>
@@ -72,78 +69,39 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.gmaven</groupId>
-                <artifactId>groovy-maven-plugin</artifactId>
-                <version>2.1.1</version>
-                <executions>
-                    <execution>
-                        <!-- Start testcontainers before code generation -->
-                        <id>testcontainers-start</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>execute</goal>
-                        </goals>
-                        <configuration>
-                            <source>
-                                db = new org.testcontainers.containers.PostgreSQLContainer("postgres:latest")
-                                        .withDatabaseName("postgres")
-                                        .withUsername("${db.username}")
-                                        .withPassword("${db.password}")
-                                db.start()
-                                project.properties.setProperty('db.url', db.getJdbcUrl())
-                                project.properties.setProperty('testcontainers.containerId', db.getContainerId());
-                                project.properties.setProperty('testcontainers.imageName', db.getDockerImageName());
-                            </source>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>jooq-testcontainers-codegen-maven-plugin</artifactId>
+                <version>0.0.1</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.testcontainers</groupId>
                         <artifactId>postgresql</artifactId>
                         <version>${testcontainers.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgresql.version}</version>
+                    </dependency>
                 </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>${flyway.version}</version>
                 <executions>
                     <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>migrate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- This URL is exported by testcontainers above -->
-                    <url>${db.url}</url>
-                    <user>${db.username}</user>
-                    <password>${db.password}</password>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen-maven</artifactId>
-                <version>${jooq.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-demo-java-ddl</id>
-                        <phase>generate-sources</phase>
+                        <id>generate-jooq-sources</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                        <phase>generate-sources</phase>
                         <configuration>
-                            <jdbc>
-                                <driver>org.postgresql.Driver</driver>
-                                <!-- This URL is exported by testcontainers above -->
-                                <url>${db.url}</url>
-                                <user>${db.username}</user>
-                                <password>${db.password}</password>
-                            </jdbc>
+                            <database>
+                                <type>POSTGRES</type>
+                                <containerImage>postgres:15.2-alpine</containerImage>
+                                <username>postgres</username>
+                                <password>postgres</password>
+                                <databaseName>postgres</databaseName>
+                            </database>
+                            <flyway>
+                                <locations>filesystem:src/main/resources/db/migration</locations>
+                            </flyway>
                             <generator>
                                 <database>
                                     <inputSchema>public</inputSchema>
