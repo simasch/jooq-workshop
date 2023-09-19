@@ -11,14 +11,6 @@ public class Ex07LockingAndTrxTest extends JooqTestcontainersTest {
 
     @Test
     void optimistic_locking() {
-        dsl
-                .selectFrom(RENTAL)
-                .where(RENTAL.RENTAL_ID.eq(854L))
-                .fetchOptional()
-                .ifPresent(rental -> {
-                    rental.setRentalDate(LocalDateTime.now());
-                    rental.store();
-                });
     }
 
 }

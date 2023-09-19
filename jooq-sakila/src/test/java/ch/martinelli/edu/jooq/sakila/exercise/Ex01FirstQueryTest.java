@@ -30,57 +30,21 @@ public class Ex01FirstQueryTest extends JooqTestcontainersTest {
 
     @Test
     void all_actors() {
-        var result = dsl.selectFrom(ACTOR).fetch();
-
-        println(result);
     }
 
     @Test
     void all_films() {
-        var result = dsl
-                .select(FILM.TITLE, LANGUAGE.NAME)
-                .from(FILM)
-                .join(LANGUAGE).on(LANGUAGE.LANGUAGE_ID.eq(FILM.LANGUAGE_ID))
-                .fetch();
-
-        println(result);
     }
 
     @Test
     void all_films_implicit() {
-        var result = dsl
-                .select(FILM.TITLE, FILM.filmLanguageIdFkey().NAME)
-                .from(FILM)
-                .fetch();
-
-        println(result);
     }
 
     @Test
     void all_actors_with_number_of_films() {
-        var result = dsl
-                .select(FILM_ACTOR.actor().FIRST_NAME,
-                        FILM_ACTOR.actor().LAST_NAME,
-                        count(FILM_ACTOR.FILM_ID))
-                .from(FILM_ACTOR)
-                .groupBy(FILM_ACTOR.actor().FIRST_NAME, FILM_ACTOR.actor().LAST_NAME)
-                .fetch();
-
-        println(result);
     }
 
     @Test
     void multiset() {
-        var result = dsl
-                .select(CATEGORY.NAME,
-                        DSL.multiset(
-                                select(FILM.TITLE)
-                                        .from(FILM)
-                                        .join(FILM_CATEGORY).on(FILM_CATEGORY.FILM_ID.eq(FILM.FILM_ID)
-                                        )))
-                .from(CATEGORY)
-                .fetch();
-
-        println(result);
     }
 }

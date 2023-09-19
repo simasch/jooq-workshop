@@ -11,33 +11,13 @@ public class Ex02ReturnTypesTest extends JooqTestcontainersTest {
 
     @Test
     void first_last_name_of_first_actor() {
-        var result = dsl
-                .select(ACTOR.FIRST_NAME, ACTOR.LAST_NAME)
-                .from(ACTOR)
-                .fetch();
-
-        println(result);
     }
 
     @Test
     void films_ordered() {
-        var result = dsl
-                .selectFrom(FILM)
-                .orderBy(FILM.RELEASE_YEAR.desc())
-                .offset(1)
-                .limit(500)
-                .fetch();
-
-        println(result);
     }
 
     @Test
-    void option_customer() {
-        var result = dsl
-                .selectFrom(CUSTOMER)
-                .where(CUSTOMER.FIRST_NAME.eq("Simon"))
-                .fetchOptional();
-
-        println(result);
+    void optional_customer() {
     }
 }

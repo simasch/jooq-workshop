@@ -14,29 +14,9 @@ public class Ex05PojosTest extends JooqTestcontainersTest {
 
     @Test
     void film_and_length() {
-        var result = dsl
-                .select(FILM.TITLE, FILM.LENGTH)
-                .from(FILM)
-                .orderBy(FILM.LENGTH)
-                .fetchInto(FilmAndLength.class);
-
-        println(result);
     }
 
     @Test
     void multiset() {
-        var result = dsl
-                .select(CATEGORY.NAME,
-                        DSL.multiset(
-                                select(FILM.TITLE)
-                                        .from(FILM)
-                                        .join(FILM_CATEGORY).on(FILM_CATEGORY.FILM_ID.eq(FILM.FILM_ID)
-                                        )
-                        ).convertFrom(r -> r.map(mapping(CategoryWithFilms.Film::new)))
-                )
-                .from(CATEGORY)
-                .fetch(mapping(CategoryWithFilms::new));
-
-        println(result);
     }
 }
