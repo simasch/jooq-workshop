@@ -14,7 +14,7 @@ public class Ex02ReturnTypesTest extends JooqTestcontainersTest {
         var result = dsl
                 .select(ACTOR.FIRST_NAME, ACTOR.LAST_NAME)
                 .from(ACTOR)
-                .fetchSingle();
+                .fetch();
 
         println(result);
     }
