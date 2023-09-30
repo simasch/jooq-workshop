@@ -108,6 +108,8 @@
                                     <database>
                                         <inputSchema>public</inputSchema>
                                         <excludes>flyway_.*</excludes>
+                                        <!-- optimistic locking -->
+                                        <recordTimestampFields>last_update</recordTimestampFields>
                                     </database>
                                     <generate>
                                         <pojos>true</pojos>
