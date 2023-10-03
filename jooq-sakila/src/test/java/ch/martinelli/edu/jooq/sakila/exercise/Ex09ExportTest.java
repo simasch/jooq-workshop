@@ -9,6 +9,8 @@ public class Ex09ExportTest extends JooqTestcontainersTest {
 
     @Test
     void export_to_csv() {
+        title("Export categories to CSV");
+
         var csv = dsl.selectFrom(CATEGORY).fetch().formatCSV();
 
         println(csv);

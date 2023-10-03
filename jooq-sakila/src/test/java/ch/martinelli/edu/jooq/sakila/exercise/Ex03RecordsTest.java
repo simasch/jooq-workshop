@@ -9,6 +9,8 @@ public class Ex03RecordsTest extends JooqTestcontainersTest {
 
     @Test
     void film_title_order_by_length() {
+        title("Use RecordHandler (deprecated)");
+
         dsl
                 .select(FILM.TITLE, FILM.LENGTH)
                 .from(FILM)
@@ -18,6 +20,8 @@ public class Ex03RecordsTest extends JooqTestcontainersTest {
 
     @Test
     void only_ids() {
+        title("Return a list of longs");
+
         var result = dsl
                 .select(FILM.FILM_ID)
                 .from(FILM)
@@ -29,17 +33,20 @@ public class Ex03RecordsTest extends JooqTestcontainersTest {
 
     @Test
     void stream() {
-        var stream = dsl
+        title("Fetch to stream");
+
+        dsl
                 .select(FILM.FILM_ID)
                 .from(FILM)
                 .orderBy(FILM.LENGTH)
-                .stream();
-
-        stream.forEach(id -> println(id));
+                .stream()
+                .forEach(JooqTestcontainersTest::println);
     }
 
     @Test
     void lazy() {
+        title("Fetch lazy");
+
         try (var cursor = dsl
                 .select(FILM.FILM_ID)
                 .from(FILM)

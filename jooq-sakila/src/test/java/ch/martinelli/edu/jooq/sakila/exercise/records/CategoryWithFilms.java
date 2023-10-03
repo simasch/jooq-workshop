@@ -1,4 +1,4 @@
-package ch.martinelli.edu.jooq.sakila.exercise;
+package ch.martinelli.edu.jooq.sakila.exercise.records;
 
 import java.util.List;
 

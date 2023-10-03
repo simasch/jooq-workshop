@@ -17,6 +17,8 @@ public class Ex04UpdatableRecordsTest extends JooqTestcontainersTest {
     @Transactional
     @Test
     void save() {
+        title("Save with ActiveRecord");
+
         var rental = dsl.newRecord(RENTAL);
         rental.setRentalDate(LocalDateTime.now());
 

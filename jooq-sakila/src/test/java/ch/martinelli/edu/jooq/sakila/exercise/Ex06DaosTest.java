@@ -12,6 +12,8 @@ public class Ex06DaosTest extends JooqTestcontainersTest {
 
     @Test
     void read_by_rental_date() {
+        title("Fetch by rental date");
+
         var rentalDao = new RentalDao(dsl.configuration());
         var rentals = rentalDao.fetchByRentalDate(LocalDateTime.now());
 
@@ -21,6 +23,8 @@ public class Ex06DaosTest extends JooqTestcontainersTest {
     @Transactional
     @Test
     void update_rental_date() {
+        title("Update record");
+
         var rentalDao = new RentalDao(dsl.configuration());
 
         rentalDao.findOptionalById(854L).ifPresent(rental -> {
@@ -32,6 +36,8 @@ public class Ex06DaosTest extends JooqTestcontainersTest {
     @Transactional
     @Test
     void delete_by_id() {
+        title("Delete by id");
+
         try {
             var rentalDao = new RentalDao(dsl.configuration());
             rentalDao.deleteById(854L);

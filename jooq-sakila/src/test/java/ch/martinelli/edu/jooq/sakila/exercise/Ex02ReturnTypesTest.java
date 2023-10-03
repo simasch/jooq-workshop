@@ -11,6 +11,8 @@ public class Ex02ReturnTypesTest extends JooqTestcontainersTest {
 
     @Test
     void first_last_name_of_first_actor() {
+        title("Find first and last name of actors");
+
         var result = dsl
                 .select(ACTOR.FIRST_NAME, ACTOR.LAST_NAME)
                 .from(ACTOR)
@@ -21,6 +23,8 @@ public class Ex02ReturnTypesTest extends JooqTestcontainersTest {
 
     @Test
     void films_ordered() {
+        title("Find all films titles ordered by release year");
+
         var result = dsl
                 .selectFrom(FILM)
                 .orderBy(FILM.RELEASE_YEAR.desc())
@@ -32,7 +36,9 @@ public class Ex02ReturnTypesTest extends JooqTestcontainersTest {
     }
 
     @Test
-    void option_customer() {
+    void optional_customer() {
+        title("Find customer by name as optional");
+
         var result = dsl
                 .selectFrom(CUSTOMER)
                 .where(CUSTOMER.FIRST_NAME.eq("Simon"))

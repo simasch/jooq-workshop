@@ -18,6 +18,8 @@ public class Ex08JPATest extends JooqTestcontainersTest {
     @Transactional
     @Test
     void native_query() {
+        title("Use jOOQ to create a native query");
+
         var sql = dsl.selectFrom(Category.CATEGORY).getSQL();
 
         List<CategoryEntity> categories = em.createNativeQuery(sql, CategoryEntity.class).getResultList();

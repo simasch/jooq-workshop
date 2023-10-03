@@ -44,7 +44,7 @@ class Demo03FunctionsTest extends JooqTestcontainersTest {
     @Test
     void aggregateFunctions() {
         title("A lot of aggregate functions are available too");
-        dsl.select(
+        var result = dsl.select(
                         ACTOR.FIRST_NAME,
                         ACTOR.LAST_NAME,
                         count().as("number of films"),
@@ -58,6 +58,8 @@ class Demo03FunctionsTest extends JooqTestcontainersTest {
                 .orderBy(ACTOR.FIRST_NAME)
                 .limit(5)
                 .fetch();
+
+        println(result);
     }
 
     @Test
@@ -65,7 +67,7 @@ class Demo03FunctionsTest extends JooqTestcontainersTest {
         title("A lot of window functions are available too");
         WindowDefinition w = name("w").as(partitionBy(ACTOR.ACTOR_ID, ACTOR.FIRST_NAME, ACTOR.LAST_NAME));
 
-        dsl.select(
+         var result = dsl.select(
                         rowNumber().over(w.orderBy(ACTOR.FIRST_NAME, ACTOR.LAST_NAME)),
                         ACTOR.FIRST_NAME,
                         ACTOR.LAST_NAME,
@@ -81,5 +83,7 @@ class Demo03FunctionsTest extends JooqTestcontainersTest {
                 .orderBy(ACTOR.FIRST_NAME, ACTOR.LAST_NAME)
                 .limit(5)
                 .fetch();
+
+         println(result);
     }
 }

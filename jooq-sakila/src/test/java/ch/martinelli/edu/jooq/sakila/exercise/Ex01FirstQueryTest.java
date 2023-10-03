@@ -1,10 +1,6 @@
 package ch.martinelli.edu.jooq.sakila.exercise;
 
 import ch.martinelli.edu.jooq.sakila.JooqTestcontainersTest;
-import ch.martinelli.edu.jooq.sakila.db.tables.Actor;
-import ch.martinelli.edu.jooq.sakila.db.tables.Category;
-import ch.martinelli.edu.jooq.sakila.db.tables.Film;
-import ch.martinelli.edu.jooq.sakila.db.tables.FilmCategory;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.Test;
 
@@ -30,6 +26,8 @@ public class Ex01FirstQueryTest extends JooqTestcontainersTest {
 
     @Test
     void all_actors() {
+        title("Find all actors");
+
         var result = dsl.selectFrom(ACTOR).fetch();
 
         println(result);
@@ -37,6 +35,8 @@ public class Ex01FirstQueryTest extends JooqTestcontainersTest {
 
     @Test
     void all_films() {
+        title("Find all film titles with the language");
+
         var result = dsl
                 .select(FILM.TITLE, LANGUAGE.NAME)
                 .from(FILM)
@@ -48,6 +48,8 @@ public class Ex01FirstQueryTest extends JooqTestcontainersTest {
 
     @Test
     void all_films_implicit() {
+        title("Find all film titles with the language using implicit join");
+
         var result = dsl
                 .select(FILM.TITLE, FILM.filmLanguageIdFkey().NAME)
                 .from(FILM)
